@@ -20,7 +20,7 @@ def Gravity_Solver():
 
 
 def main_tasks():
-   
+    
     Print_logo()
 
     print "\n"

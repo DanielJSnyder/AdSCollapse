@@ -28,9 +28,7 @@ class Gravity_obj:
          self.Initial_Condition_type_name  = read_data_string(tag_name = 'Initial_Condition_Method',file_name = 'parameters/parameters.xml')
 	 #matches the name of the initial condition to the stuff in the Gravity dictionary
 
-	 print 'got here' #debugging line
          try:
-		 print 'trying condition'
 	         self.Initial_Condition_type = Gravity_Dictionary["Initial_Condition"][self.Initial_Condition_type_name]
 	 except KeyError:
 		print 'ERROR: Initial Condition name is wrong'
