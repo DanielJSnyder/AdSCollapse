@@ -1,0 +1,22 @@
+*this is a test file*
+Field properties
+	Geometry: AdS4 
+	Cosmological constant = 1 
+
+Potential Conditions
+	Potential = Higgs 
+
+Initial Conditions
+	Initial Conditional = Gaussian 
+	Initial epsilon = 1 
+	Initial sigma = 0 
+
+Numerical Method
+	Solver : RK4 
+	Grid Size: 1000 
+
+Ending Conditions
+	Horizon Condition: 0 
+	Max iterations: 2 
+
+This is the test file
