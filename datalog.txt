@@ -1,22 +1,19 @@
-*this is a test file*
 Field properties
 	Geometry: AdS4 
-	Cosmological constant = 1 
+	Cosmological constant = 1.000000 
 
 Potential Conditions
 	Potential = Higgs 
 
 Initial Conditions
 	Initial Conditional = Gaussian 
-	Initial epsilon = 1 
-	Initial sigma = 0 
+	Initial epsilon = 0.500000000000 
+	Initial sigma = 0.500000000000 
 
 Numerical Method
 	Solver : RK4 
-	Grid Size: 1000 
+	Grid Size: 4000.000000 
 
 Ending Conditions
-	Horizon Condition: 0 
-	Max iterations: 2 
-
-This is the test file
+	Horizon Condition: 0.010000000000 
+	Max iterations: 1.000000 

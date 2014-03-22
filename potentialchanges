@@ -1,0 +1,2 @@
+check if solver can be improved especially through array indexing.
+check if you can not have to read in the epsilon again in Initial condition definition and instead if you can just use the self.initial_eps and sigma

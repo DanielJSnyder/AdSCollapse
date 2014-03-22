@@ -9,7 +9,7 @@
     <Potential>Higgs</Potential>
   </Field_properties>
   <Initial_Condition>
-    <Initial_Condition_Method>Gausian</Initial_Condition_Method>
+    <Initial_Condition_Method>Gaussian</Initial_Condition_Method>
   </Initial_Condition>
   <Grid_size>4000</Grid_size>
   <Horizon_condition>
@@ -18,4 +18,8 @@
   <Max_number_of_loops>
     <i_max>1</i_max>
   </Max_number_of_loops>
+  <Condition_changing>
+    <Number_of_points>2</Number_of_points>
+    <end_eps>2.0</end_eps>
+  </Condition_changing>
 </data>

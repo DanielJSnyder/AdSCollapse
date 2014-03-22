@@ -3,7 +3,7 @@ from numpy                        import linspace, pi
 from Utilities                    import read_data_string, read_data_float, read_data_int
 from Gravity_Dictionary           import *
 from Condition_Change		  import Change_eps
-
+import  os
 class Gravity_obj:
 
       from Gravity_Output_Properties    import Output_parameters
@@ -42,11 +42,18 @@ class Gravity_obj:
          #Horizon Condition
          self.A_min                  = read_data_float(tag_name = 'A_min',file_name = 'parameters/parameters.xml')
 
-	#sets the initial conditions for generating end data
-	 if self.Initial_Condition_type_name =='Gaussian':
+	#sets the initial conditions for generating end data 
+         try: 
+		print os.environ['PBS_ARRAYID']
+		self.pbs_arr = True
+	 except KeyError:
+		print "not a pbs Array"
+	 	self.pbs_arr = False		 
+	 if self.Initial_Condition_type_name =='Gaussian': #add the report checking before this is done.
 		self.initial_eps		= read_data_float(tag_name = 'epsilon' , file_name = 'parameters/Initial_Condition/Gaussian.xml')
-		self.initial_sigma		= read_data_float(tag_name = 'sigma' , file_name = 'parameters/Initial_Condition/Gaussian.xml')
-		self.initial_eps = Change_eps(self.initial_eps)
+		self.initial_sigma		= read_data_float(tag_name = 'sigma' , file_name = 'parameters/Initial_Condition/Gaussian.xml')	
+	 	if self.pbs_arr:
+			self.initial_eps = Change_eps(self.initial_eps)
 
 	#Initial Condition Setup
          if (self.Initial_Condition_type != Initial_Condition_Input_File):

@@ -9,11 +9,11 @@
     </Number_of_data_point>
     <Output_Setup>
       <Frame_format>png</Frame_format>
-      <Pi_Field>True</Pi_Field>
+      <Pi_Field>False</Pi_Field>
         <Pi_Field_max>60</Pi_Field_max>
-      <Phi_Field>True</Phi_Field>
+      <Phi_Field>False</Phi_Field>
         <Phi_Field_max>20</Phi_Field_max>
-      <phi_Field>True</phi_Field>
+      <phi_Field>False</phi_Field>
         <phi_Field_max>20</phi_Field_max>
       <Data_file_name>data.txt</Data_file_name>
     </Output_Setup>

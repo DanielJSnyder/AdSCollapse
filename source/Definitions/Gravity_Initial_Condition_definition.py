@@ -12,7 +12,7 @@ def Initial_Condition_Gaussian(x):
        
     sigma = read_data_float(tag_name = 'sigma' , file_name = 'parameters/Initial_Condition/Gaussian.xml')
     eps   = read_data_float(tag_name = 'epsilon' , file_name = 'parameters/Initial_Condition/Gaussian.xml')
-   
+
     eps = Change_eps(eps)#changes the value of eps based on Array ID
 
     for i in range(len(x)):

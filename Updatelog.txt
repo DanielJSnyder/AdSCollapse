@@ -1,0 +1,2 @@
+3-15 starting on implementing easier condition changing3-15 starting on implementing easier condition changing3-15 starting on implementing easier condition changing
+3-22 Working on allowing it to be run without being a PBS array

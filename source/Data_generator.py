@@ -1,6 +1,3 @@
-import os
-pbID = os.environ['PBS_ARRAYID']
-
 def Create_data(Grav_obj):
 	print "\n\ncreating datalog\n\n"
 	f = open('datalog.txt', 'w')
@@ -33,18 +30,19 @@ def Create_data(Grav_obj):
 	f.write('\tMax iterations: %f \n' %(Grav_obj.Max_interation))
 	f.close
 	
-	f2 = open('times%3f'%(float(pbID)), 'w')
-	f3 = open('eps%3f'%(float(pbID)), 'w')
-	f4 = open('radius%3f'%(float(pbID)), 'w')
-	if Grav_obj.field.Horizon:
-		f2.write('%3f \n'%(float(pbID)))
-		f2.write('%.12f\n' %( Grav_obj.field.time))	
+	if Grav_obj.pbs_arr:
+		f2 = open('times%3f'%(float(pbID)), 'w')
+		f3 = open('eps%3f'%(float(pbID)), 'w')
+		f4 = open('radius%3f'%(float(pbID)), 'w')
+		if Grav_obj.field.Horizon:
+			f2.write('%3f \n'%(float(pbID)))
+			f2.write('%.12f\n' %( Grav_obj.field.time))	
+		
+			f3.write('%3f \n'%(float(pbID)))
+			f3.write('%.12f\n' %(Grav_obj.initial_eps))
 	
-		f3.write('%3f \n'%(float(pbID)))
-		f3.write('%.12f\n' %(Grav_obj.initial_eps))
-	
-		f4.write('%3f \n'%(float(pbID)))
-		f4.write('%.12f\n' %(float(Grav_obj.field.Horizon_r)))
-	f2.close
-	f3.close
-	f4.close
+			f4.write('%3f \n'%(float(pbID)))
+			f4.write('%.12f\n' %(float(Grav_obj.field.Horizon_r)))
+		f2.close
+		f3.close
+		f4.close

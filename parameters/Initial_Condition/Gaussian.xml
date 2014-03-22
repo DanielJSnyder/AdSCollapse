@@ -4,5 +4,9 @@
     <sigma>0.5</sigma>
     <epsilon>0.5</epsilon>
   </Initial_Condition>
+  <Condition_Changing>
+    <Number_of_points>3</Number_of_points>
+    <Final_epsilon>1.5</Final_epsilon>
+  </Condition_Changing>
 </data>
 
