@@ -1,0 +1,32 @@
+#!/bin/sh
+#PBS -S /bin/sh
+#PBS -N MCTPstring
+#PBS -l procs=1,mem=500mb,walltime=0:3:00:00
+#PBS -A mctpproject_flux
+#PBS -t 1-16
+#PBS -l qos=flux
+#PBS -q flux
+#PBS -M snysly@umich.edu
+#PBS -m abe
+#PBS -j oe
+#PBS -V
+
+echo "I ran on"
+cat $PBS_NODEFILE
+echo ""
+
+mkdir /tmp/snysly
+mkdir /tmp/snysly/${PBS_JOBID}
+cd /tmp/snysly/${PBS_JOBID}
+
+cp -r /home2/snysly/Test/Fun/* /tmp/snysly/${PBS_JOBID}/
+
+echo ""
+
+python main.py
+
+mkdir /home2/snysly/Test/python/trials2/${PBS_JOBID}
+cp -r Output /home2/snysly/Test/python/trials2/${PBS_JOBID}
+cp -r Report /home2/snysly/Test/python/trials2/${PBS_JOBID}
+cp -r parameters /home2/snysly/Test/python/trials2/${PBS_JOBID}
+echo""
