@@ -2,7 +2,7 @@
   <Initial_Condition>
     <Initial_Condition_Method>Gaussian</Initial_Condition_Method>
     <sigma>0.5</sigma>
-    <epsilon>0.5</epsilon>
+    <epsilon>2.0</epsilon>
   </Initial_Condition>
   <Condition_Changing>
     <Number_of_points>3</Number_of_points>

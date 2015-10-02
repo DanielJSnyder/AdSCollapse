@@ -4,7 +4,7 @@ from matplotlib.pyplot            import *
 #rc('text',usetex=False)
 #rc('font',family='serif')
 
-def Output_Plot_Construction(Gravity_object,i):
+def Output_Plot_Construction(Gravity_object,i, delta, A):
 
       if (Gravity_object.output.Pi_Field):
          clf()
@@ -39,6 +39,24 @@ def Output_Plot_Construction(Gravity_object,i):
          print 'Saving frame', fname
          savefig(fdir+fname)
 
+      if (Gravity_object.output.A_Field):
+	 clf()
+	 plot(Gravity_object.field.r, A)
+	 ylim( [0, Gravity_object.output.A_Field_max])
+	 fdir  = 'Output/saved_plots/A/'
+	 fname = 'A_frame%04d.'%(i/Gravity_object.output.Frame_time_step)+Gravity_object.output.Frame_format
+	 print 'saving frame', fname
+	 savefig(fdir+fname)
+
+      if (Gravity_object.output.delta_Field):
+	 clf()
+	 plot(Gravity_object.field.r, delta)
+	 ylim([-Gravity_object.output.delta_Field_max, Gravity_object.output.delta_Field_max])
+	 fdir = 'Output/saved_plots/delta/'
+	 fname = 'delta_frame%04d.'%(i/Gravity_object.output.Frame_time_step)+Gravity_object.output.Frame_format
+	 print 'saving frame', fname
+	 savefig(fdir+fname)
+ 
 def Output_Data_Construction(Gravity_object,delta,A,file_loc = "Output/saved_data/"):
     f1 = open(file_loc+Gravity_object.output.Data_file_name, "a")
     Grid_size   = Gravity_object.Grid_size

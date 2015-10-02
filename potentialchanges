@@ -1,2 +1,9 @@
 check if solver can be improved especially through array indexing.
 check if you can not have to read in the epsilon again in Initial condition definition and instead if you can just use the self.initial_eps and sigma
+
+add axis labels to the movies so that they don't need to be explained.
+
+check why the powerspectrum generated an error on the Mar26M1 runs
+
+create a better format for the powerspectrum data table
+

@@ -41,7 +41,7 @@ def main_tasks():
 
     if Gravity_object.output.Power_Spectrum_status:
        Power_Spectrum_Plot_Construction(Gravity_obj,file_loc_save="Output/Power_Spectrum_data/",file_loc_load="Output/Power_Spectrum_data/")
-
+    Pspec_data(Gravity_object)
     if Gravity_object.output.Report_status:
        Creat_Report(Gravity_object)
 

@@ -46,3 +46,25 @@ def Create_data(Grav_obj):
 		f2.close
 		f3.close
 		f4.close
+#	if Grav_obj.output.Power_Spectrum_status:
+#		if Grav_obj.pbs_arr:
+#			f5 = open('pspectrum%3f'(float(pbID)), 'w')
+#		else:
+#			f5 = open('pspectrum', 'w')
+#		f5.write('r\t\tn\n')
+#		for i in range(Grav_obj.output.Power_Spectrum_points):
+#			f5.write('%12f\t'%(Grav_obj.field.r[i]))
+#			f5.write('%12f\n'%(Grav_obj.field.Power_Spec_n[i]))
+#		f5.close
+
+def Pspec_data(Grav_obj):
+	if Grav_obj.output.Power_Spectrum_status:
+		if Grav_obj.pbs_arr:
+			f5 = open('pspectrum%3f'(float(pbID)), 'w')
+		else:
+			f5 = open('pspectrum', 'w')
+		f5.write('r\t\tn\n')
+		for i in range(Grav_obj.output.Power_Spectrum_points):
+			f5.write('%12f\t'%(Grav_obj.field.r[i]))
+			f5.write('%12f\n'%(Grav_obj.field.Power_Spec_n[i]))
+		f5.close

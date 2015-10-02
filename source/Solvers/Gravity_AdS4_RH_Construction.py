@@ -6,6 +6,7 @@ from Utilities        import read_data_string
 Potential_type_name    = read_data_string(tag_name = 'Potential',file_name = 'parameters/parameters.xml')
 Potential_func         = Gravity_Dictionary["Potential"][Potential_type_name][0]
 Potential_dfunc        = Gravity_Dictionary["Potential"][Potential_type_name][1]
+print "reading in data in RH construction"
 
 #Potential Definition
 def Potential(phi):

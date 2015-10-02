@@ -16,7 +16,7 @@
     <A_min>0.01</A_min>
   </Horizon_condition>
   <Max_number_of_loops>
-    <i_max>1</i_max>
+    <i_max>10000</i_max>
   </Max_number_of_loops>
   <Condition_changing>
     <Number_of_points>2</Number_of_points>

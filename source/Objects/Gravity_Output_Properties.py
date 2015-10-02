@@ -21,6 +21,10 @@ class Output_parameters:
          self.phi_Field_max         = read_data_float(tag_name = 'phi_Field_max',file_name = 'parameters/output.xml')
          self.Frame_format          = read_data_string(tag_name = 'Frame_format',file_name = 'parameters/output.xml')
          self.Data_file_name        = read_data_string(tag_name = 'Data_file_name',file_name = 'parameters/output.xml')
+	 self.A_Field               = read_data_bool(tag_name = 'A_Field', file_name = 'parameters/output.xml')
+	 self.A_Field_max           = read_data_float(tag_name = 'A_Field_max', file_name = 'parameters/output.xml')
+	 self.delta_Field           = read_data_bool(tag_name = 'delta_Field', file_name = 'parameters/output.xml')
+	 self.delta_Field_max               = read_data_float(tag_name = 'delta_Field_max', file_name = 'parameters/output.xml')
          
          #Time Power Spectrum
          self.Power_Spectrum_points = read_data_int(tag_name = 'Power_Spectrum_data_size',file_name = 'parameters/output.xml')

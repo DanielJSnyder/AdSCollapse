@@ -64,7 +64,7 @@ def Power_Spectrum_Plot_Construction(Gravity_obj,file_loc_save="Report/",file_lo
        fname = 'Power_Spectrum%02d.pdf'%(i+1)
        print 'n = ', Gravity_obj.field.Power_Spec_n[i]
        print 'Saving plot', fname
-       savefig(fdir+fname)
+#       savefig(fdir+fname)
 
     rc('text',usetex=False)  
 

@@ -16,10 +16,12 @@ def Delta_Solver(x,Phi,Pi):
     dx       = x[1]-x[0]
     delta[0] = 0.0
     for i in range(0,len(x)-1):
-       k1 = dx*RH_cons_delta( x[i]        ,  Phi[i]               ,  Pi[i]               )
-       k2 = dx*RH_cons_delta( x[i]+0.5*dx , (Phi[i+1]+Phi[i])/2.0 , (Pi[i+1]+Pi[i])/2.0  )
-       k3 = dx*RH_cons_delta( x[i]+0.5*dx , (Phi[i+1]+Phi[i])/2.0 , (Pi[i+1]+Pi[i])/2.0  )
-       k4 = dx*RH_cons_delta( x[i]+dx     ,  Phi[i+1]             ,  Pi[i+1]             )
+       y = (Phi[i+1]+Phi[i])/2.0
+       z = (Pi[i+1] + Pi[i])/2.0
+       k1 = dx*(-sin(x[i]) * cos(x[i])*(Pi[i]**2 + Phi[i]**2))
+       k2 = dx*(-sin(x[i]+0.5*dx) * cos(x[i]+0.5*dx)*(y**2 + z**2))
+       k3 = dx*(-sin(x[i]+0.5*dx) * cos(x[i]+0.5*dx)*(y**2 + z**2))
+       k4 = dx*(-sin(x[i]+dx) * cos(x[i]+dx)*(Pi[i+1]**2 + Phi[i+1]**2))
        delta[i+1] = delta[i] + (k1+2.0*k2+2.0*k3+k4)/6.0 
     return delta
 
@@ -146,7 +148,7 @@ def RK4_solver(Gravity_object):
           Power_Spectrum_Data_Construction(Gravity_object)
 
        if (Gravity_object.output.Output_status and i%Gravity_object.output.Frame_time_step==0):
-          Output_Plot_Construction(Gravity_object,i)
+          Output_Plot_Construction(Gravity_object,i, delta, A)
           Output_Data_Construction(Gravity_object,delta,A)
        else:
           if(i%Gravity_object.output.Frame_time_step==20):

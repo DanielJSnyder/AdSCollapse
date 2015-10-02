@@ -7,7 +7,7 @@ Potential Conditions
 
 Initial Conditions
 	Initial Conditional = Gaussian 
-	Initial epsilon = 0.500000000000 
+	Initial epsilon = 2.000000000000 
 	Initial sigma = 0.500000000000 
 
 Numerical Method
@@ -16,4 +16,4 @@ Numerical Method
 
 Ending Conditions
 	Horizon Condition: 0.010000000000 
-	Max iterations: 1.000000 
+	Max iterations: 100.000000 
